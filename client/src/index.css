@@ -1,0 +1,24 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  min-height: 100dvh; /* Changed from height to min-height */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box; /* Added */
+  overflow-y: auto; /* Added */
+}
+
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+}
+
+/* Optional: Prevent layout shift on scrollbar appearance */
+@media (hover: hover) {
+  #root {
+    scrollbar-gutter: stable;
+  }
+}
