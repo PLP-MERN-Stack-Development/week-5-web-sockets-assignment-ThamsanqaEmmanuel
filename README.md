@@ -1,41 +1,102 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19929121&assignment_repo_type=AssignmentRepo)
+
 # Real-Time Chat Application with Socket.io
 
 This assignment focuses on building a real-time chat application using Socket.io, implementing bidirectional communication between clients and server.
 
-## Assignment Overview
+##  Features
+✅ Real-time messaging – Instant message delivery between users.
+✅ User authentication – Simple username-based login.
+✅ Typing indicators – Shows when a user is typing.
+✅ Online/offline status – Tracks active users.
+✅ Private messaging – Direct one-on-one chats.
+✅ Notifications – Alerts for new messages and user activity.
+✅ Responsive design – Works on desktop and mobile.
 
-You will build a chat application with the following features:
-1. Real-time messaging using Socket.io
-2. User authentication and presence
-3. Multiple chat rooms or private messaging
-4. Real-time notifications
-5. Advanced features like typing indicators and read receipts
+##  Setup & Installation
+Prerequisites
+Node.js (v18+ recommended)
+npm or yarn
+MongoDB (for storing messages & user data)
+
+
+1. Clone the Repository
+
+git clone https://github.com/PLP-MERN-Stack-Development/week-5-web-sockets-assignment-ThamsanqaEmmanuel.git
+cd week-5-web-sockets-assignment-ThamsanqaEmmanuel
+
+2. Install Server Dependencies
+
+cd server
+npm install
+
+3. Install Client Dependencies
+
+cd ../client
+npm install
+
+4. Configure Environment Variables
+
+## Create a .env file in the server directory:
+
+env
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/chat-app
+JWT_SECRET=your-secret-key
+
+5. Run the Application
+
+## Start the server:
+
+cd ../server
+npm run dev
+Start the client:
+
+
+cd ../client
+npm run dev
+
+Server: Runs on http://localhost:5000
+
+Client: Runs on http://localhost:5173
+
 
 ## Project Structure
 
-```
-socketio-chat/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
-│   │   ├── components/     # UI components
-│   │   ├── context/        # React context providers
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── pages/          # Page components
-│   │   ├── socket/         # Socket.io client setup
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Node.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Socket event handlers
-│   ├── models/             # Data models
-│   ├── socket/             # Socket.io server setup
-│   ├── utils/              # Utility functions
-│   ├── server.js           # Main server file
-│   └── package.json        # Server dependencies
-└── README.md               # Project documentation
-```
+Client/
+src/
+├── components/
+│   ├── MessageList.jsx       # Displays chat messages
+│   ├── MessageInput.jsx      # Handles message input
+│   ├── TypingIndicator.jsx   # Shows typing status
+│   └── UserList.jsx          # Lists online users
+├── pages/
+│   ├── Login.jsx             # User login page
+│   ├── ChatRoom.jsx          # Main chat interface
+│   └── PrivateChat.jsx       # Private messaging
+├── services/
+│   └── api.js               # API calls (if using REST)
+├── context/
+│   └── SocketProvider.jsx    # Manages Socket.io connection
+├── App.jsx                   # Main app router
+└── socket.js                 # Socket.io client setup```
+
+server/
+├── controllers/
+│   ├── authController.js     # Handles login/logout
+│   ├── messageController.js  # Manages messages
+│   └── userController.js     # Tracks online users
+├── models/
+│   ├── User.js               # User schema
+│   └── Message.js           # Message schema
+├── routes/
+│   ├── authRoutes.js        # Authentication routes
+│   └── messageRoutes.js     # Message API routes
+├── sockets/
+│   └── socketHandler.js     # Socket.io event handlers
+├── config/
+│   └── db.js               # MongoDB connection
+├── server.js               # Express + Socket.io server
+└── .env                    # Environment variables
 
 ## Getting Started
 
@@ -59,16 +120,10 @@ socketio-chat/
 - Modern web browser
 - Basic understanding of React and Express
 
-## Submission
+## Screenshots
+![alt text](image.png)
+![alt text](image-1.png)
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
-
-1. Complete both the client and server portions of the application
-2. Implement the core chat functionality
-3. Add at least 3 advanced features
-4. Document your setup process and features in the README.md
-5. Include screenshots or GIFs of your working application
-6. Optional: Deploy your application and add the URLs to your README.md
 
 ## Resources
 
